@@ -62,7 +62,12 @@ public class MainActivity extends AppCompatActivity {
                     //mhsList.add(new MhsModel(-1,isian_nama,isian_nim,isian_noHp));
 
                     boolean stts;
-                    if(!isEdit){
+
+                    mhsList = dbase.list();
+                    if  (mhsList.size() >= 5) {
+                        Toast.makeText(getApplicationContext(), "Data Maksimal 5!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        if(!isEdit){
                         mm = new MhsModel(-1,isian_nama, isian_nim, isian_noHp);
                         stts = dbase.simpan(mm);
                         edNama.setText("");
@@ -78,8 +83,9 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Data Berhasil Disimpan", Toast.LENGTH_SHORT)
                                 .show();
                     }else {
-                        Toast.makeText(getApplicationContext(),"Data Gagal Disimpan", Toast.LENGTH_SHORT)
+                        Toast.makeText(getApplicationContext(), "Data Gagal Disimpan", Toast.LENGTH_SHORT)
                                 .show();
+                        }
                     }
 
                     //intent_list.putParcelableArrayListExtra("mhsList",mhsList);
