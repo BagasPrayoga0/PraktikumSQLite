@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Isian Masih Kosong", Toast.LENGTH_SHORT).show();
                 }else{
                     //mhsList.add(new MhsModel(-1,isian_nama,isian_nim,isian_noHp));
-
                     boolean stts;
 
                     mhsList = dbase.list();
